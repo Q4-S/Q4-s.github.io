@@ -1,102 +1,77 @@
-<!DOCTYPE HTML>
-<!--
-	Aerial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>QAS</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />		
-		<link rel="icon" href="data:;base64,iVBORw0KGgo=">
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<div id="wrapper">
-			<div id="bg"></div>
-			<div id="overlay"></div>
-			<div id="main">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23667eea' stroke-width='2'%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3Cpath d='M12 1v6m0 6v6m5.2-10.8l-4.2 4.2m0 0l-4.2 4.2m10.4 0l-4.2-4.2m0 0l-4.2-4.2M1 12h6m6 0h6'/%3E%3C/svg%3E">
+    <title>Under Construction</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-				<!-- Header -->
-					<header id="header">
-						<h1>(Quo_O). Alief S.</h1>
-						<p>Freelancer &nbsp;&bull;&nbsp; Business &nbsp;&bull;&nbsp; Just wait for surprise ^_^</p>
-						<div id="countdown" class="count"></div>
-						<nav>
-							<ul>
-								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-								<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-							</ul>
-						</nav>
-					</header>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
 
-				<!-- Footer "http://html5up.net"-->
-					<footer id="footer">
-						<span class="copyright">Design by <em style="font-style: italic;">html5up</em>. &copy; <text id="tanggal">1989</text></span>. 
-					</footer>
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 600px;
+        }
 
-			</div>
-		</div>
-		<script>
-			window.onload = function() { document.body.classList.remove('is-preload'); }
-			window.ontouchmove = function() { return false; }
-			window.onorientationchange = function() { document.body.scrollTop = 0; }
-            
-               // Tanggal saiki
-			  const d = new Date();
-              const month   = d.toLocaleString(["ban", "id"], {month:'long',timeZone: "UTC"}); // months from 1-12
-              const day     = d.toLocaleString(["ban", "id"], {weekday:'long',timeZone: "UTC"});
-              const tanggal = day + ", " + d.getUTCDate()  + " " + month + " " + d.getUTCFullYear();
-              document.getElementById("tanggal").innerHTML = tanggal;
-              //console.log(tanggal);
-			
-              // Set the date we're counting down to
-              var countDownDate = Math.random() * 765432100 + d.getTime(); //new Date("Mar 15, 2025 21:30:00").getTime();
-              //console.log(countDownDate-now);
-            
-              // Update the count down every 1 second
-              var x = setInterval(function() { now = new Date().getTime();
-                
-              // Find the distance between now and the count down date
-              var distance = countDownDate - now;
-                
-              // Time calculations for days, hours, minutes and seconds
-              var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-              var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-              var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-              var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                
-              // Output the result in an element with id="countdown"
-              if(hours<1){
-                document.getElementById("countdown").innerHTML = "<span class='minutes'>" + minutes + "</span><span class='seconds'>" + seconds + "</span>";
-              }
-              else if(days<1){
-                document.getElementById("countdown").innerHTML = "<span class='hours'>" + hours + "</span><span class='minutes'>" + minutes + "</span><span class='seconds'>" + seconds + "</span>";
-              }else{
-                document.getElementById("countdown").innerHTML = "<span class='days'>" + days + "</span><span class='hours'>" + hours + "</span><span class='minutes'>" + minutes + "</span><span class='seconds'>" + seconds + "</span>";
-              }  
-              // If the count down is over, write some text 
-              if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("countdown").innerHTML = "~CONRATULATION~";
-              }
-            }, 1000);
-		</script>
-    <style>.count{ text-align: center; font-size: 17px; font-family: Arial, sans-serif, bold;
+        .logo {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 2rem;
+            animation: glow 2s ease-in-out infinite;
         }
-        .days:after{content: " days, ";
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease-in 0.3s both;
         }
-        .hours:after{content: " hours ";
-        }
-        .minutes:after{content: " minutse ";
-        }
-        .seconds:after{content: " seconds ";
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeIn 1s ease-in 0.6s both;
         }
     </style>
-	</body>
+</head>
+<body>
+    <div class="container">
+        <!-- Q4S Glowing Shield Logo with Serif Classic Font -->
+        <svg class="logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100 20 L170 50 L170 110 Q170 160 100 180 Q30 160 30 110 L30 50 Z" 
+                  fill="url(#logoGradient)" stroke="white" stroke-width="4"/>
+            <text x="100" y="125" font-family="Georgia, serif" font-size="58" font-weight="bold" 
+                  fill="white" text-anchor="middle">Q4S</text>
+        </svg>
+
+        <h1>Under Construction</h1>
+        <p>We're working hard to bring you something amazing. :)</p>
+        <p style="font-size: smaller;">Design by <a href="https://qu-o.github.io"><em style="font-style: italic;">Quo</em></a>. &copy; <text id="tanggal">1989</text></p>
+    </div>
+    
+    <script>
+        // Tanggal saiki
+        const d = new Date();
+        const month   = d.toLocaleString(["ban", "id"], {month:'long',timeZone: "UTC"}); // months from 1-12
+        const day     = d.toLocaleString(["ban", "id"], {weekday:'long',timeZone: "UTC"});
+        const tanggal = day + ", " + d.getUTCDate()  + " " + month + " " + d.getUTCFullYear();
+        document.getElementById("tanggal").innerHTML = tanggal;
+        //console.log(tanggal);
+    </script>
+</body>
 </html>
